@@ -1,0 +1,172 @@
+﻿<Window x:Class="task1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:dvc="clr-namespace:System.Windows.Forms.DataVisualization.Charting; assembly=System.Windows.Forms.DataVisualization"
+        mc:Ignorable="d"
+        Title="Лаб. раб. №8 ст.гр.10701219 Харлап С.А." 
+        Height="1000" Width="1000"
+        Background="AntiqueWhite">
+    <Window.Resources>
+        <Style TargetType="TextBox">
+            <Style.Setters>
+                <Setter Property="Foreground" Value="Black" />
+            </Style.Setters>
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="True">
+                    <Setter Property="Foreground" Value="Red" />
+                    <Setter Property="Background" Value="Aquamarine" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="Button">
+            <Style.Setters>
+                <Setter Property="Button.IsEnabled" Value="False"/>
+            </Style.Setters>
+            <Style.Triggers>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding ElementName=x1TextBox, 
+                            Path=Foreground}" Value="Black"/>
+                        <Condition Binding="{Binding ElementName=x2TextBox, 
+                            Path=Foreground}" Value="Black"/>
+                        <Condition Binding="{Binding ElementName=nTextBox, 
+                            Path=Foreground}" Value="Black"/>
+                    </MultiDataTrigger.Conditions>
+                    <MultiDataTrigger.Setters>
+                        <Setter Property="Button.IsEnabled" Value="True"/>
+                    </MultiDataTrigger.Setters>
+                </MultiDataTrigger>
+
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <WindowsFormsHost>
+            <dvc:Chart x:Name="chart" />
+        </WindowsFormsHost>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel x:Name="x1StackPanel"
+                    Orientation="Horizontal">
+            <Label FontSize="20"
+                   VerticalAlignment="Center"
+               >X1=</Label>
+            <TextBox x:Name="x1TextBox" 
+                     FontSize="20"
+                     MinHeight="40"
+                     MinWidth="40"
+                     BorderBrush="Black">
+                <TextBox.Text>
+                    <Binding
+                    Path="X1" Mode="TwoWay">
+                        <Binding.ValidationRules>
+                            <ExceptionValidationRule/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+        </StackPanel>
+        <StackPanel x:Name="x2StackPanel"
+                    Orientation="Horizontal"
+                    Grid.Row="2">
+            <Label FontSize="20"
+                   VerticalAlignment="Center"
+               >X2=</Label>
+            <TextBox x:Name="x2TextBox" 
+                     FontSize="20"
+                     MinHeight="40"
+                     MinWidth="40"
+                     BorderBrush="Black">
+                <TextBox.Text>
+                    <Binding
+                    Path="X2" Mode="TwoWay">
+                        <Binding.ValidationRules>
+                            <ExceptionValidationRule/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+        </StackPanel>
+        <StackPanel x:Name="hStackPanel"
+                    Orientation="Horizontal"
+                    Grid.Row="2"
+                    Grid.Column="1">
+            <Label FontSize="20"
+                   VerticalAlignment="Center"
+               >H=</Label>
+            <TextBox x:Name="hTextBox" 
+                     FontSize="20"
+                     MinHeight="40"
+                     MinWidth="40"
+                     BorderBrush="Black">
+                <TextBox.Text>
+                    <Binding
+                    Path="H" Mode="TwoWay">
+                        <Binding.ValidationRules>
+                            <ExceptionValidationRule/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+        </StackPanel>
+        <StackPanel x:Name="nStackPanel"
+                    Orientation="Horizontal"
+                    Grid.Row="0"
+                    Grid.Column="1">
+            <Label FontSize="20"
+                   VerticalAlignment="Center"
+               >N=</Label>
+            <TextBox x:Name="nTextBox" 
+                     FontSize="20"
+                     MinHeight="40"
+                     MinWidth="40"
+                     BorderBrush="Black">
+                <TextBox.Text>
+                    <Binding
+                    Path="N" Mode="TwoWay">
+                        <Binding.ValidationRules>
+                            <ExceptionValidationRule/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+        </StackPanel>
+        <Label FontSize="20"
+               VerticalAlignment="Center"
+               HorizontalAlignment="Center"
+               Grid.Row="3"
+               Padding="5"
+               Grid.ColumnSpan ="3"
+               >Результат выполнения программы:</Label>
+        
+        <Grid Grid.ColumnSpan="3" 
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Height="300"
+                       Width="800"
+                       Grid.Row="4"
+                   >
+
+        </Grid>
+
+
+        <Button x:Name="ExecuteButton" 
+                Grid.ColumnSpan="3" 
+                Grid.Row="5"
+                FontSize="30" Click="ExecuteButton_Click" Grid.RowSpan="2">Вычислить</Button>
+    </Grid>
+    
+</Window>

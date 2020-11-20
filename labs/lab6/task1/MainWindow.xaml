@@ -1,0 +1,113 @@
+﻿<Window x:Class="task1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:task1"
+        xmlns:local1="clr-namespace:task1.Data"
+        mc:Ignorable="d"
+        Title="Лаб. раб. №2 ст.гр.10701219 Харлап С.А." 
+        Height="700" Width="800"
+        Background="AntiqueWhite">
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="*"/>
+           
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal">
+            <StackPanel>
+                <Label>FirstName</Label>
+                <TextBox Width="200"
+                         Height="50"
+                         x:Name="firstNameTextBox"/>
+            </StackPanel>
+            <Border Width="10"></Border>
+            <StackPanel>
+                <Label>LastName</Label>
+                <TextBox Width="200"
+                         Height="50"
+                         x:Name="lastNameTextBox"/>
+            </StackPanel>
+            <Border Width="10"></Border>
+            <StackPanel>
+                <Label>Address</Label>
+                <TextBox Width="200"
+                         Height="50"
+                         x:Name="addressTextBox"/>
+            </StackPanel>
+            <Border Width="10"></Border>
+            <StackPanel>
+                <Label>RegistrationDate</Label>
+                <TextBox Width="150"
+                         Height="50"
+                         x:Name="registrationDateTextBox"/>
+            </StackPanel>
+        </StackPanel>
+        <Button x:Name="addButton"
+                Grid.Row="1"
+                FontSize="40" Click="addButton_Click"> Add</Button>
+        
+        <ListView x:Name="ansverResult"
+                  Grid.Row="2"
+                  >
+            <ListView.ItemTemplate >
+                <DataTemplate DataType="Customer">
+                    <StackPanel
+                        Orientation="Horizontal">
+                        <!--<Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>-->
+                        
+                        
+                        <TextBox Text="{Binding FirstName}"
+                                   Grid.Column="0"
+                                   Padding="10"/>
+                        <TextBox Text="{Binding LastName}"
+                                   Padding="10"
+                                   Grid.Column="1"/>
+                        <TextBox Text="{Binding Address}"
+                                   Padding="10"
+                                   Grid.Column="2"/>
+                        <TextBox Text="{Binding RegistrationDate}"
+                                   Padding="10"
+                                   Grid.Column="3"/>
+                        <TextBlock Text="{Binding ID}"
+                                   Visibility="Hidden"
+                                   Grid.Column="5">
+                        </TextBlock>
+                        <Button Click="Button_Click" 
+                                Grid.Column="4" Content="Delete">
+                            
+                        </Button>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button x:Name="closeButton"
+                HorizontalAlignment="Center" 
+                Grid.Row="3" 
+                VerticalAlignment="Center"
+                FontSize="50"
+                Click="closeButton_Click">
+            <Button.Content>
+                Close
+            </Button.Content>
+        </Button>
+
+    </Grid>
+    
+</Window>

@@ -1,0 +1,114 @@
+﻿<Window x:Class="task1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:task1"
+        mc:Ignorable="d"
+        Title="Лаб. раб. №2 ст.гр.10701219 Харлап С.А." 
+        Height="700" Width="800"
+        Background="AntiqueWhite">
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label>
+                    N
+                </Label>
+                <TextBox x:Name="nTextBox">
+                    <TextBox.Text>
+                        <Binding
+                        Path="N" Mode="TwoWay">
+                            <Binding.ValidationRules>
+                                <ExceptionValidationRule/>
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox.Text>
+                </TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label>M</Label>
+                <TextBox x:Name="mTextBox">
+                    <TextBox.Text>
+                        <Binding
+                       Path="M" Mode="TwoWay">
+                            <Binding.ValidationRules>
+                                <ExceptionValidationRule/>
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox.Text>
+                </TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label>K</Label>
+                <TextBox x:Name="kTextBox">
+                    <TextBox.Text>
+                        <Binding
+                        Path="K" Mode="TwoWay">
+                            <Binding.ValidationRules>
+                                <ExceptionValidationRule/>
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox.Text>
+                </TextBox>
+            </StackPanel>
+            <Button x:Name="drawButton" Click="drawButton_Click">
+                Нарисовать таблицу
+            </Button>
+        </StackPanel>
+
+        <ScrollViewer Grid.Row="1">
+            <ListView x:Name ="table">
+            </ListView>
+        </ScrollViewer>
+        
+        <StackPanel
+            Grid.Row="3"
+            Orientation="Horizontal">
+           
+            <Button x:Name="ExecuteButton" 
+                FontSize="30" Click="ExecuteButton_Click">Вычислить</Button>
+
+            <StackPanel>
+                <Label
+                    HorizontalContentAlignment="Center"
+                    FontSize="30">I</Label>
+                <Border  MinWidth="40">
+                    <TextBlock HorizontalAlignment="Center"
+                       x:Name="iTextBlock"
+                       FontSize="30">
+
+                    </TextBlock>
+                </Border>
+            </StackPanel>
+
+            <StackPanel>
+                <Label
+                    HorizontalContentAlignment="Center"
+                    FontSize="30">J</Label>
+                <Border  MinWidth="40">
+                    <TextBlock 
+                       x:Name="jTextBlock"
+                       FontSize="30"
+                        HorizontalAlignment="Center">
+
+                    </TextBlock>
+                </Border>
+                
+            </StackPanel>
+        </StackPanel>
+       
+    </Grid>
+
+</Window>
