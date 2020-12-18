@@ -135,7 +135,7 @@ namespace lab5
                         s += textBox2.Text[i];
                     }
                     iniFIle.Write("text", textRes);
-
+                    iniFIle.Write("number", 10);
                     string res = "";
                     for (int i = 0; i < comboBoxList.Count; i++)
                     {

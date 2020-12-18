@@ -1,0 +1,175 @@
+﻿namespace lab1
+{
+    partial class Form1
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.textBox_x = new System.Windows.Forms.TextBox();
+            this.textBox_y = new System.Windows.Forms.TextBox();
+            this.textBox_z = new System.Windows.Forms.TextBox();
+            this.label_x = new System.Windows.Forms.Label();
+            this.label_y = new System.Windows.Forms.Label();
+            this.label_z = new System.Windows.Forms.Label();
+            this.submit = new System.Windows.Forms.Button();
+            this.result = new System.Windows.Forms.TextBox();
+            this.label_result = new System.Windows.Forms.Label();
+            this.imageControl = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.imageControl)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // textBox_x
+            // 
+            this.textBox_x.Location = new System.Drawing.Point(104, 26);
+            this.textBox_x.Name = "textBox_x";
+            this.textBox_x.Size = new System.Drawing.Size(185, 22);
+            this.textBox_x.TabIndex = 0;
+            this.textBox_x.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // textBox_y
+            // 
+            this.textBox_y.Location = new System.Drawing.Point(104, 68);
+            this.textBox_y.Name = "textBox_y";
+            this.textBox_y.Size = new System.Drawing.Size(185, 22);
+            this.textBox_y.TabIndex = 1;
+            // 
+            // textBox_z
+            // 
+            this.textBox_z.Location = new System.Drawing.Point(104, 113);
+            this.textBox_z.Name = "textBox_z";
+            this.textBox_z.Size = new System.Drawing.Size(185, 22);
+            this.textBox_z.TabIndex = 2;
+            // 
+            // label_x
+            // 
+            this.label_x.AutoSize = true;
+            this.label_x.Location = new System.Drawing.Point(12, 26);
+            this.label_x.Name = "label_x";
+            this.label_x.Size = new System.Drawing.Size(55, 17);
+            this.label_x.TabIndex = 3;
+            this.label_x.Text = "Write x:";
+            this.label_x.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label_y
+            // 
+            this.label_y.AutoSize = true;
+            this.label_y.Location = new System.Drawing.Point(12, 68);
+            this.label_y.Name = "label_y";
+            this.label_y.Size = new System.Drawing.Size(56, 17);
+            this.label_y.TabIndex = 4;
+            this.label_y.Text = "Write y:";
+            this.label_y.Click += new System.EventHandler(this.label_y_Click);
+            // 
+            // label_z
+            // 
+            this.label_z.AutoSize = true;
+            this.label_z.Location = new System.Drawing.Point(12, 118);
+            this.label_z.Name = "label_z";
+            this.label_z.Size = new System.Drawing.Size(56, 17);
+            this.label_z.TabIndex = 5;
+            this.label_z.Text = "Write z:";
+            // 
+            // submit
+            // 
+            this.submit.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.submit.Location = new System.Drawing.Point(104, 316);
+            this.submit.Name = "submit";
+            this.submit.Size = new System.Drawing.Size(185, 23);
+            this.submit.TabIndex = 6;
+            this.submit.Text = "submit";
+            this.submit.UseVisualStyleBackColor = true;
+            this.submit.Click += new System.EventHandler(this.submit_Click);
+            // 
+            // result
+            // 
+            this.result.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.result.Location = new System.Drawing.Point(104, 181);
+            this.result.Multiline = true;
+            this.result.Name = "result";
+            this.result.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.result.Size = new System.Drawing.Size(242, 116);
+            this.result.TabIndex = 7;
+            this.result.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            // 
+            // label_result
+            // 
+            this.label_result.AutoSize = true;
+            this.label_result.Location = new System.Drawing.Point(15, 185);
+            this.label_result.Name = "label_result";
+            this.label_result.Size = new System.Drawing.Size(52, 17);
+            this.label_result.TabIndex = 8;
+            this.label_result.Text = "Result:";
+            this.label_result.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // imageControl
+            // 
+            this.imageControl.Location = new System.Drawing.Point(432, 26);
+            this.imageControl.Name = "imageControl";
+            this.imageControl.Size = new System.Drawing.Size(639, 313);
+            this.imageControl.TabIndex = 9;
+            this.imageControl.TabStop = false;
+            this.imageControl.Click += new System.EventHandler(this.imageControl_Click);
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1113, 444);
+            this.Controls.Add(this.imageControl);
+            this.Controls.Add(this.label_result);
+            this.Controls.Add(this.result);
+            this.Controls.Add(this.submit);
+            this.Controls.Add(this.label_z);
+            this.Controls.Add(this.label_y);
+            this.Controls.Add(this.label_x);
+            this.Controls.Add(this.textBox_z);
+            this.Controls.Add(this.textBox_y);
+            this.Controls.Add(this.textBox_x);
+            this.Name = "Form1";
+            this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.imageControl)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.TextBox textBox_x;
+        private System.Windows.Forms.TextBox textBox_y;
+        private System.Windows.Forms.TextBox textBox_z;
+        private System.Windows.Forms.Label label_x;
+        private System.Windows.Forms.Label label_y;
+        private System.Windows.Forms.Label label_z;
+        private System.Windows.Forms.Button submit;
+        private System.Windows.Forms.TextBox result;
+        private System.Windows.Forms.Label label_result;
+        private System.Windows.Forms.PictureBox imageControl;
+    }
+}
+

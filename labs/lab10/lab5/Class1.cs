@@ -8,7 +8,9 @@ namespace lab5
     class IniFIle
     {
         string Path;
-        string EXE = Assembly.GetExecutingAssembly().GetName().Name;
+        //string EXE = Assembly.GetExecutingAssembly().GetName().Name;
+        string EXE = "sergey";
+
 
         [DllImport("kernel32", CharSet = CharSet.Unicode)]
         static extern long WritePrivateProfileString(string Section, string Key, string Value, string FilePath);
@@ -23,14 +25,19 @@ namespace lab5
 
         public string Read(string Key, string Section = null)
         {
+            var some = Section ?? EXE;
             var RetVal = new StringBuilder(255);
-            GetPrivateProfileString(Section ?? EXE, Key, "", RetVal, 255, Path);
+            GetPrivateProfileString(Section ?? EXE, Key, "\n", RetVal, 255, Path);
             return RetVal.ToString();
         }
 
         public void Write(string Key, string Value, string Section = null)
         {
             WritePrivateProfileString(Section ?? EXE, Key, Value, Path);
+        }
+        public void Write(string Key, int Value, string Section = null)
+        {
+            WritePrivateProfileString(Section ?? EXE, Key, Value.ToString(), Path);
         }
 
         public void DeleteKey(string Key, string Section = null)

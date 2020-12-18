@@ -31,11 +31,13 @@ namespace lab10_2
 
             textBox1.BackColor = color;
             state = g.Save();
+
+
         }
 
         private void pictureBox1_MouseMove_1(object sender, MouseEventArgs e)
         {
-            
+
             if (e.Button == MouseButtons.Left && flag)
             {
                 current = e.Location;
@@ -54,15 +56,24 @@ namespace lab10_2
             var Y = Math.Min(old.Y, current.Y);
             var lineX = Math.Abs(old.X - current.X);
             var lineY = Math.Abs(old.Y - current.Y);
+
+
             if (type == "line")
             {
                 g.DrawLine(p, old, current);
+            }
+            else if (type == "text")
+            {
+                StringFormat drawFormat = new StringFormat();
+                g.DrawString(textBox2.Text, new Font("Arial", 35), new SolidBrush(this.color),
+                    old.X, old.Y, drawFormat);
             }
             else if (type == "elipse")
             {
                 Rectangle r = new Rectangle(X, Y, lineX, lineY);
                 g.DrawEllipse(p, r);
-            } else
+            }
+            else
             {
                 Rectangle r = new Rectangle(X, Y, lineX, lineY);
                 g.DrawRectangle(p, r);
@@ -105,9 +116,15 @@ namespace lab10_2
             if (MyDialog.ShowDialog() == DialogResult.OK)
             {
                 p.Color = MyDialog.Color;
+                this.color = p.Color;
                 textBox1.BackColor = MyDialog.Color;
             }
-                
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            type = "text";
         }
     }
 }
